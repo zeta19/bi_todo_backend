@@ -10,11 +10,19 @@ router.post("/", async (req, res, next) => {
   }
 
   try {
+    let duration = data["duration"].split(" ");
+    // console.log(duration);
+    let curr_date = new Date();
+    let expireAt = new Date(
+      curr_date.getTime() + parseInt(duration[0]) * 60000
+    );
+
     let insertObj = {
       "task name": data["task_name"],
       "task description": data["task_description"],
       creator: data["creator"],
-      createdAt: new Date(),
+      createdAt: curr_date,
+      expireAt: expireAt,
     };
 
     let dbres = await req.db.collection("tasks").insertOne(insertObj);
