@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, "public")));
 var http = require("http");
 var server = http.createServer(app);
 
-var connection = MongoClient.connect("mongodb://localhost:27017/todoDb");
+var connection = MongoClient.connect(
+  "mongodb+srv://dbuser:dbuser123@cluster0.erkvv.mongodb.net/tasks?retryWrites=true&w=majority"
+);
 
 app.use((req, res, next) => {
   connection
@@ -36,7 +38,7 @@ app.use("/", indexRouter);
 app.use("/add", addTaskRouter);
 app.use("/list", listTaskRouter);
 
-server.listen(5000, () => {
+server.listen(process.env.PORT || 5000, () => {
   console.log("listening on port 5000");
 });
 
