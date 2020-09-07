@@ -70,8 +70,8 @@ _Type of request: GET_
     {
       "_id": "5f567947b941c30017655385",
       "task name": "date test",
-      "task description": "bs aisehi test k lie",
-      "creator": "apun",
+      "task description": "just for testing",
+      "creator": "user-koustav",
       "createdAt": "2020-09-07T18:17:43.545Z",
       "expireAt": "2020-09-07T18:18:43.545Z"
     }
