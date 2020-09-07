@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
+//route to fetch all the currently active tasks
 router.get("/", async (req, res, next) => {
   try {
     let tasks = await req.db.collection("tasks").find({}).toArray();

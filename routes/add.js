@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
+//route to add new tasks
 router.post("/", async (req, res, next) => {
   let data = req.body;
   console.log(data);
