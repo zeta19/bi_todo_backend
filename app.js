@@ -19,9 +19,9 @@ app.use(express.static(path.join(__dirname, "public")));
 var http = require("http");
 var server = http.createServer(app);
 
-var connection = MongoClient.connect(
-  "mongodb+srv://dbuser:dbuser123@cluster0.erkvv.mongodb.net/tasks?retryWrites=true&w=majority"
-);
+require("dotenv").config({ path: __dirname + "/.env" });
+
+var connection = MongoClient.connect(process.env.MONGODB_URI);
 
 app.use((req, res, next) => {
   connection
