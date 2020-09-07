@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    let tasks = await req.body.collection("tasks").find({}).toArray();
+    let tasks = await req.db.collection("tasks").find({}).toArray();
     return res.json({ error: false, tasks: tasks });
   } catch (ex) {
     console.log(ex);
