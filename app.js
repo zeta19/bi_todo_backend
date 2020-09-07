@@ -21,12 +21,13 @@ var server = http.createServer(app);
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
+//database connection pool creation
 var connection = MongoClient.connect(process.env.MONGODB_URI);
 
 app.use((req, res, next) => {
   connection
     .then((client) => {
-      req["db"] = client.db("todoDb");
+      req["db"] = client.db(process.env.DB_NAME);
       next();
     })
     .catch((err) => {
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
     });
 });
 
+//custom routes
 app.use("/", indexRouter);
 app.use("/add", addTaskRouter);
 app.use("/list", listTaskRouter);
