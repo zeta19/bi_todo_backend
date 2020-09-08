@@ -1,19 +1,20 @@
 # Todo Application Backend REST server
 
-_Provides REST APIs for adding and viewing Tasks._
+Its an express application which contains two routes **_/add_** and **_/list_**.
+The application is hosted as an heroku app. [Click here to visit](https://shielded-cliffs-84411.herokuapp.com/)
 
 ## Day Wise Progress
 
-**Day 1:**
+**Day 1 (6/9/2020):**
 
-1.  Scaffolded an express app using express-generator
+1.  Scaffolded an express app using express-generator.
 2.  Downloaded all dependencies.
 3.  Configured local test database.
 4.  Connection with database established.
 5.  Implemented /add route and its features.
 6.  Implemented task expiry feature with the help of TTL indexing.
 
-**Day 2:**
+**Day 2 (7/9/2020):**
 
 1.  Set up Atlas Mongodb cluster.
 2.  Created a database.
@@ -23,6 +24,11 @@ _Provides REST APIs for adding and viewing Tasks._
 6.  Deployed application on heroku.
 7.  Connected with GitHub.
 8.  Implemented /list route and its features.
+
+**Day 3 (8/9/2020):**
+
+1.  Finalized documentation.
+2.  Final submission after manual testing.
 
 ## Request-Response Structure
 
@@ -70,8 +76,8 @@ _Type of request: GET_
     {
       "_id": "5f567947b941c30017655385",
       "task name": "date test",
-      "task description": "just for testing",
-      "creator": "user-koustav",
+      "task description": "bs aisehi test k lie",
+      "creator": "apun",
       "createdAt": "2020-09-07T18:17:43.545Z",
       "expireAt": "2020-09-07T18:18:43.545Z"
     }
@@ -88,7 +94,7 @@ _Type of request: GET_
 }
 ```
 
-## Assumptions
+## Important Points
 
 1.  Database URI is set up as environment variable.
 2.  Code is first deployed to **_dev_** branch until its tested after that it is then merged with **_master_** branch.
